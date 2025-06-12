@@ -7,7 +7,6 @@ from rest_framework.decorators import api_view
 
 
 
-
 @api_view(http_method_names=["POST"])
 def email_send(request):
 	sender = settings.EMAIL_HOST_USER

@@ -4,7 +4,6 @@ import requests
 from .models import Order
 
 
-# TODO: add here your API Views
 
 @api_view(http_method_names=["POST"])
 def add_order(request):
@@ -17,7 +16,7 @@ def add_order(request):
 	print(request.data)
 
 	for product in request.data["products_id"]:
-		response = requests.get("http://127.0.0.1:8001/products/fetch/?prod_id=%s" % product).json()
+		response = requests.get("http://127.0.0.1:8003/products/fetch/?prod_id=%s" % product).json()
 		print(response)
 		total_price += float(response[0]["price"])
 

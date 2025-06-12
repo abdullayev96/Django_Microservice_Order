@@ -1,6 +1,5 @@
-Django
+Django==4.2.2
 djangorestframework
 djongo
-psycopg2
 gunicorn
 requests

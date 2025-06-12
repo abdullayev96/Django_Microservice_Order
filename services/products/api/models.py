@@ -1,9 +1,17 @@
-from djongo import models #for mongodb nosql
+#from djongo import models #for mongodb nosql
+from django.db import models
 
-# TODO: write here your models
+
 
 class Category(models.Model):
 	name = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.name
+
+	class Meta:
+		verbose_name = "Kategoriya_"
+
 
 
 class Product(models.Model):
@@ -11,3 +19,9 @@ class Product(models.Model):
 	name = models.CharField(max_length=100)
 	price = models.FloatField()
 	description = models.TextField()
+
+	def __str__(self):
+		return self.name
+
+	class Meta:
+		verbose_name = "Mahsulot_"
