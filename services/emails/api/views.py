@@ -6,27 +6,21 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 
-
 @api_view(http_method_names=["POST"])
 def email_send(request):
 	sender = settings.EMAIL_HOST_USER
 	try:
-		receiver = request.data["receiver"]
-		subject = request.data["subject"]
-		body = request.data["body"]
+	     receiver = request.data["receiver"]
+	     subject = request.data["subject"]
+	     body = request.data["body"]
 
-		new_mail = Email.objects.create(
-			sender=sender,
-			receiver=receiver,
-			subject=subject,
-			body=body
-		)
+	     new_mail = Email.objects.create(sender=sender,receiver=receiver,subject=subject,body=body)
 
-		send_mail(subject, body, sender, [receiver], fail_silently=False)
-		return Response({"message": "Email sent successfully"}, status=200)
+	     send_mail(subject, body, sender, [receiver], fail_silently=False)
+	     return Response({"message": "Email sent successfully"}, status=200)
 
 	except:
-		return Response({"message": "Email sending error"}, status=500)
+	     return Response({"message": "Email sending error"}, status=500)
 
 
 

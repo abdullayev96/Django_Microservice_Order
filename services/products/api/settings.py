@@ -7,7 +7,9 @@ SECRET_KEY = '********* SET HERE YOUR SECRET *********'
 
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['*']
+
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -19,15 +21,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 
-	####   main
-	'api',
+    ####   main
+    'api',
 
-	#####  framework
-	'rest_framework',
+    #####  framework
+    'rest_framework',
     'drf_yasg',
 
 
 ]
+
 
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',

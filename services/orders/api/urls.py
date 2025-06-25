@@ -3,9 +3,9 @@ from django.urls import path, include
 
 from . import views
 
-# TODO: add here your API URLs
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-	path("orders/add/", views.add_order)
+    path("orders/add/", views.add_order)
+
 ]
